@@ -1,3 +1,15 @@
 admin_homepage:
     path:     /
     defaults: { _controller: AdminBundle:Default:index }
+
+admin_login:
+    pattern:  /login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+admin_check:
+    pattern:  /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    pattern:  /logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
