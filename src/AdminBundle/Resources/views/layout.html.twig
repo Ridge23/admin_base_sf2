@@ -18,7 +18,7 @@
     <!-- Morris Chart Styles-->
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
     <!-- Custom Styles-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/admin/css/custom-styles.css') }}" rel="stylesheet"/>
+    
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <!-- Custom styles for this template -->
@@ -34,8 +34,10 @@
 <body>
 <div id="wrapper">
 
-{% include 'AdminBundle::nav_top.html.twig' %}
-{% include 'AdminBundle::nav_side.html.twig' %}
+    {% if app.request.get('_route') != 'admin_login' %}
+        {% include 'AdminBundle::nav_top.html.twig' %}
+        {% include 'AdminBundle::nav_side.html.twig' %}
+    {% endif %}
 
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
