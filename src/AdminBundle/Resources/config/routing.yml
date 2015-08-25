@@ -4,12 +4,12 @@ admin_homepage:
 
 admin_login:
     pattern:  /login
-    defaults: { _controller: FOSUserBundle:Security:login }
+    defaults: { _controller: AdminBundle:Security:login }
 
 admin_check:
     pattern:  /login_check
-    defaults: { _controller: FOSUserBundle:Security:check }
+    defaults: { _controller: AdminBundle:Security:check }
 
 admin_logout:
     pattern:  /logout
-    defaults: { _controller: FOSUserBundle:Security:logout }
+    defaults: { _controller: AdminBundle:Security:logout }

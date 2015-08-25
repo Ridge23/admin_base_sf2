@@ -1,0 +1,30 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form class="form-signin" action="{{ path("admin_check") }}" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Username" required autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    </form>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/admin/css/signin.css') }}">
+{% endblock %}
