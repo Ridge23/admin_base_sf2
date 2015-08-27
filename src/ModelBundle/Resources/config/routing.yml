@@ -1,3 +1,6 @@
 model_homepage:
     path:     /hello/{name}
     defaults: { _controller: ModelBundle:Default:index }
+admin_user:
+    resource: "@AdminBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user

@@ -3,15 +3,16 @@
         <ul class="nav" id="main-menu">
 
             <li>
-                <a class="active-menu" href="{{ path ('admin_homepage') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                <a href="{{ path ('admin_homepage') }}" {% if app.request.attributes.get( '_route' ) starts with 'admin_homepage' %} class="active-menu"{% endif %} ><i class="fa fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="ui-elements.html"><i class="fa fa-desktop"></i> Events</a>
+                <a href="ui-elements.html" ><i class="glyphicon glyphicon-star-empty"></i> Events</a>
+            </li>
+
+            <li>
+                <a href="{{ path ('admin_user') }}" {% if app.request.attributes.get( '_route' ) starts with 'admin_user' %} class="active-menu"{% endif %} ><i class="glyphicon glyphicon-user"></i> Users</a>
             </li>
             <!--
-            <li>
-                <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
-            </li>
             <li>
                 <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
             </li>
